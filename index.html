@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tabela de Pessoas</h1>
+        <button id="gerarDadosButton">Gerar Dados Aleatórios</button>
+        <button id="apagarHistoricoButton">Apagar Histórico</button>
+        <a href="consultar-cep.html" id="consultarCepButton" class="destaque">Consultar CEP</a>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Data de Nascimento</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaCorpo"></tbody>
+    </table>
+    <script src="main.js"></script>
+</body>
+</html>

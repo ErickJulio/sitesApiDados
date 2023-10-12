@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar CEP</title>
+    <link rel="stylesheet" type="text/css" href="consultar-cep-styles.css">
+</head>
+<body>
+    <h1>Consultar CEP</h1>
+    <input type="text" id="cepInput" placeholder="Digite o CEP">
+    <button id="consultarCepButton" class="destaque">Consultar CEP</button>
+    <div id="resultadoCep"></div>
+    <button id="paginaInicialButton" class="destaque">Página Inicial</button>
+    <script src="consultar-cep.js"></script>
+    <script>
+        const paginaInicialButton = document.getElementById('paginaInicialButton');
+        
+        paginaInicialButton.addEventListener('click', function() {
+            window.location.href = 'index.html'; 
+        });
+    </script>
+</body>
+</html>
