@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar CEP</title>
+    <title>Consultar CEP e Validar CPF</title>
     <link rel="stylesheet" type="text/css" href="consultar-cep-styles.css">
 </head>
 <body>
-    <h1>Consultar CEP</h1>
+    <h1>Consultar CEP e Validar CPF</h1>
     <div class="container">
-        <input type="text" id="cepInput" placeholder="Digite o CEP">
-        <button id="consultarCepButton" class="btn btn-highlight">Consultar CEP</button>
-        <div id="resultadoCep"></div>
+        <div class="cep-container">
+            <h2>Consultar CEP</h2>
+            <input type="text" id="cepInput" placeholder="Digite o CEP">
+            <button id="consultarCepButton" class="btn btn-highlight">Consultar CEP</button>
+            <div id="resultadoCep"></div>
+        </div>
+
+        <div class="cpf-container">
+            <h2>Validar CPF</h2>
+            <input type="text" id="cpfInput" placeholder="Digite o CPF">
+            <button id="validarCpfButton" class="btn btn-highlight">Validar CPF</button>
+            <div id="resultadoCpf"></div>
+        </div>
     </div>
+    
     <a href="index.html" id="paginaInicialButton" class="btn btn-highlight">Página Inicial</a>
     <script src="consultar-cep.js"></script>
 </body>

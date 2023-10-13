@@ -25,17 +25,19 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos do Campo de CEP */
-#cepInput {
+/* Estilos do Campo de CEP e CPF */
+#cepInput, #cpfInput {
     width: 100%;
     padding: 10px;
     margin: 20px 0;
     display: block;
     box-sizing: border-box;
+    border: 1px solid #ccc; /* Adicione uma borda para destacar o campo */
+    border-radius: 5px;
 }
 
-/* Estilos do Botão de Consultar CEP */
-#consultarCepButton, a.btn {
+/* Estilos dos Botões de Consultar CEP e Validar CPF */
+#consultarCepButton, #validarCpfButton, a.btn {
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -48,11 +50,16 @@ h1 {
     border-radius: 5px;
 }
 
-#consultarCepButton:hover, a.btn:hover {
+#consultarCepButton:hover, #validarCpfButton:hover, a.btn:hover {
     background-color: #2976c7;
 }
 
-/* Estilos do Resultado do CEP */
-#resultadoCep {
+/* Estilos do Resultado do CEP e CPF */
+#resultadoCep, #resultadoCpf {
     margin: 20px 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
 }
