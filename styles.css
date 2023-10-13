@@ -1,3 +1,4 @@
+/* Estilos Globais */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -6,11 +7,11 @@ body {
     text-align: center;
 }
 
+/* Estilos do Cabeçalho */
 header {
     background-color: #3498db;
     color: #fff;
-    padding: 20px;
-    margin: 0;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,40 +22,37 @@ h1 {
     margin: 10px 0;
 }
 
-.buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-button {
+/* Estilos dos Botões */
+.btn {
     background-color: #3498db;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2976c7;
-}
-
-a.destaque {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
     display: inline-block;
     margin: 10px 0;
+    border-radius: 5px;
 }
 
-a.destaque:hover {
+.btn:hover {
     background-color: #2976c7;
 }
 
+.btn.btn-primary {
+    background-color: #3498db;
+}
+
+.btn.btn-danger {
+    background-color: #d9534f;
+}
+
+.btn.btn-highlight {
+    background-color: #5bc0de;
+}
+
+/* Estilos da Tabela */
 .table-container {
     padding: 10px;
     background-color: #fff;

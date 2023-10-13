@@ -1,15 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const gerarDadosButton = document.getElementById('gerarDadosButton');
     const apagarHistoricoButton = document.getElementById('apagarHistoricoButton');
     const tabelaCorpo = document.getElementById('tabelaCorpo');
 
-    gerarDadosButton.addEventListener('click', function() {
-        fazGet('http://localhost:3000/gerar-dadosAleatorios', function(usuario) {
+    gerarDadosButton.addEventListener('click', function () {
+        fazGet('http://localhost:3000/gerar-dadosAleatorios', function (usuario) {
             atualizarTabela(usuario);
         });
     });
 
-    apagarHistoricoButton.addEventListener('click', function() {
+    apagarHistoricoButton.addEventListener('click', function () {
         apagarHistorico();
     });
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let request = new XMLHttpRequest();
         request.open('GET', url, true);
 
-        request.onload = function() {
+        request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
                 const data = JSON.parse(request.responseText);
                 callback(data);
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        request.onerror = function() {
+        request.onerror = function () {
             console.error('Erro de conexão');
         };
 
@@ -58,8 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Inicialize a tabela preenchendo dados quando a página carregar
-    fazGet('http://localhost:3000/gerar-dadosAleatorios', function(usuario) {
-        atualizarTabela(usuario);
-    });
+   
+    apagarHistorico();
 });

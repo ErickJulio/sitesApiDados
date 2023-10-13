@@ -10,17 +10,10 @@
     <h1>Consultar CEP</h1>
     <div class="container">
         <input type="text" id="cepInput" placeholder="Digite o CEP">
-        <button id="consultarCepButton" class="destaque">Consultar CEP</button>
+        <button id="consultarCepButton" class="btn btn-highlight">Consultar CEP</button>
         <div id="resultadoCep"></div>
     </div>
-    <button id="paginaInicialButton" class="destaque">Página Inicial</button>
+    <a href="index.html" id="paginaInicialButton" class="btn btn-highlight">Página Inicial</a>
     <script src="consultar-cep.js"></script>
-    <script>
-        const paginaInicialButton = document.getElementById('paginaInicialButton');
-
-        paginaInicialButton.addEventListener('click', function() {
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>
