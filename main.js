@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
 
     gerarDadosButton.addEventListener('click', function () {
-        fazGet('http://localhost:3000/gerar-dadosAleatorios', function (usuario) {
+        fazGet('https://api-teste-dados.onrender.com/gerar-dadosAleatorios', function (usuario) {
             atualizarTabela(usuario);
         });
     });
