@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function consultarCep(cep) {
-        fetch('http://localhost:3000/validar-cep', {
+        fetch('https://api-teste-dados.onrender.com/validar-cep', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validarCpf(cpf) {
-        fetch('http://localhost:3000/validar-cpf', {
+        fetch('https://api-teste-dados.onrender.com/validar-cpf', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
