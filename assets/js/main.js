@@ -2,12 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const gerarDadosButton = document.getElementById('gerarDadosButton');
     const apagarHistoricoButton = document.getElementById('apagarHistoricoButton');
     const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const menuToggle = document.getElementById('menu-toggle');
 
     gerarDadosButton.addEventListener('click', function () {
         fazGet('https://api-teste-dados.onrender.com/gerar-dadosAleatorios', function (usuario) {
             // Adiciona a classe de animação "fade-in" à nova linha
             const novaLinha = atualizarTabela(usuario);
             novaLinha.classList.add('fade-in');
+            // Fecha o menu após clicar em "Gerar Dados Aleatórios"
+            menuToggle.checked = false;
         });
     });
 
@@ -15,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove a classe de animação "fade-in" das linhas existentes
         removerAnimacoes();
         apagarHistorico();
+        // Fecha o menu após clicar em "Apagar Histórico"
+        menuToggle.checked = false;
     });
 
     function fazGet(url, callback) {
