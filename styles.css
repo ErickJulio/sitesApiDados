@@ -32,7 +32,7 @@ h1 {
     transition: background-color 0.3s;
     text-decoration: none;
     display: inline-block;
-    margin: 10px 0;
+    margin: 10px 10px 10px 0; /* Ajustado o margin direito para separar os botões */
     border-radius: 5px;
 }
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Mensagem</title>
+    <link rel="stylesheet" type="text/css" href="enviar-mensagem.css"> 
+</head>
+<body>
+    <header>
+        <h1>Enviar Mensagem</h1>
+    </header>
+    <div class="message-container">
+        <form id="messageForm">
+            <div class="form-group">
+                <label for="recipient">Celular:</label>
+                <input type="tel" id="recipient" name="recipient" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required class="form-control"></textarea>
+            </div>
+            <button id="sendButton" class="btn btn-primary">Enviar Mensagem</button>
+        </form>
+        <div id="responseMessage" class="response-message"></div>
+    </div>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+    </div>
+    <footer>
+        <a href="index.html" class="btn btn-home">Página Inicial</a>
+    </footer>
+    <script src="enviar-mensagem.js"></script>
+</body>
+</html>
