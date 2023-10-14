@@ -5,26 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar CEP e Validar CPF</title>
     <link rel="stylesheet" type="text/css" href="consultar-cep-styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Consultar CEP e Validar CPF</h1>
-    <div class="container">
-        <div class="cep-container">
-            <h2>Consultar CEP</h2>
-            <input type="text" id="cepInput" placeholder="Digite o CEP">
-            <button id="consultarCepButton" class="btn btn-highlight">Consultar CEP</button>
-            <div id="resultadoCep"></div>
-        </div>
-
-        <div class="cpf-container">
-            <h2>Validar CPF</h2>
-            <input type="text" id="cpfInput" placeholder="Digite o CPF">
-            <button id="validarCpfButton" class="btn btn-highlight">Validar CPF</button>
-            <div id="resultadoCpf"></div>
+    <div class="container mt-5">
+        <h1 class="text-center">Consultar CEP e Validar CPF</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="cep-container p-4">
+                    <h2>Consultar CEP</h2>
+                    <div class="input-group mb-3">
+                        <input type="text" id="cepInput" class="form-control" placeholder="Digite o CEP">
+                        <div class="input-group-append">
+                            <button id="consultarCepButton" class="btn btn-highlight">Consultar CEP</button>
+                        </div>
+                    </div>
+                    <div id="resultadoCep" class="mt-3"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cpf-container p-4">
+                    <h2>Validar CPF</h2>
+                    <div class="input-group mb-3">
+                        <input type="text" id="cpfInput" class="form-control" placeholder="Digite o CPF">
+                        <div class="input-group-append">
+                            <button id="validarCpfButton" class="btn btn-highlight">Validar CPF</button>
+                        </div>
+                    </div>
+                    <div id="resultadoCpf" class="mt-3"></div>
+                </div>
+            </div>
         </div>
     </div>
     
-    <a href="index.html" id="paginaInicialButton" class="btn btn-highlight">Página Inicial</a>
+    <div class="container mt-3">
+        <div class="text-center">
+            <a href="index.html" id="paginaInicialButton" class="btn btn-highlight">Página Inicial</a>
+        </div>
+    </div>
+
     <script src="consultar-cep.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

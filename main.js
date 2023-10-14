@@ -5,11 +5,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     gerarDadosButton.addEventListener('click', function () {
         fazGet('https://api-teste-dados.onrender.com/gerar-dadosAleatorios', function (usuario) {
-            atualizarTabela(usuario);
+            // Adiciona a classe de animação "fade-in" à nova linha
+            const novaLinha = atualizarTabela(usuario);
+            novaLinha.classList.add('fade-in');
         });
     });
 
     apagarHistoricoButton.addEventListener('click', function () {
+        // Remove a classe de animação "fade-in" das linhas existentes
+        removerAnimacoes();
         apagarHistorico();
     });
 
@@ -50,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         novaLinha.appendChild(dataNascimentoCell);
 
         tabelaCorpo.appendChild(novaLinha);
+
+        return novaLinha;
     }
 
     function apagarHistorico() {
@@ -58,6 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-   
-    apagarHistorico();
+    function removerAnimacoes() {
+        const linhas = tabelaCorpo.querySelectorAll('tr');
+        linhas.forEach(function (linha) {
+            linha.classList.remove('fade-in');
+        });
+    }
+
+    // Remove as animações existentes ao carregar a página
+    removerAnimacoes();
 });

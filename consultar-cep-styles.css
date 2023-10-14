@@ -13,26 +13,27 @@ h1 {
     color: #fff;
     padding: 20px;
     margin: 0;
+    font-size: 24px; /* Aumentar o tamanho do texto */
 }
 
 /* Estilos do Container */
 .container {
-    max-width: 400px;
+    max-width: 600px; /* Aumentar a largura máxima */
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Arredondar mais os cantos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Aumentar a intensidade da sombra */
 }
 
 /* Estilos do Campo de CEP e CPF */
 #cepInput, #cpfInput {
     width: 100%;
     padding: 10px;
-    margin: 20px 0;
+    margin: 10px 0; /* Reduzir a margem para um espaçamento mais compacto */
     display: block;
     box-sizing: border-box;
-    border: 1px solid #ccc; /* Adicione uma borda para destacar o campo */
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
@@ -48,6 +49,7 @@ h1 {
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
+    font-size: 18px; /* Aumentar o tamanho do texto */
 }
 
 #consultarCepButton:hover, #validarCpfButton:hover, a.btn:hover {
@@ -57,9 +59,11 @@ h1 {
 /* Estilos do Resultado do CEP e CPF */
 #resultadoCep, #resultadoCpf {
     margin: 20px 0;
-    padding: 10px;
+    padding: 20px; /* Aumentar o preenchimento */
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: left;
+    font-size: 16px; /* Aumentar o tamanho do texto */
+    line-height: 1.4; /* Espaçamento entre linhas maior para melhor legibilidade */
 }

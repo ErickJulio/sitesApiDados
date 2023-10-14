@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela de Pessoas</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <h1>Tabela de Pessoas</h1>
-        <div class="buttons-container">
-            <button id="gerarDadosButton" class="btn btn-primary">Gerar Dados Aleatórios</button>
-            <button id="apagarHistoricoButton" class="btn btn-danger">Apagar Histórico</button>
-            
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Tabela de Pessoas</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <button id="gerarDadosButton" class="btn btn-primary btn-lg btn-block">Gerar Dados Aleatórios</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="apagarHistoricoButton" class="btn btn-danger btn-lg btn-block">Apagar Histórico</button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <a href="consultar-cep.html" class="btn btn-info btn-lg btn-block">Consultar Dados</a>
+                </div>
+                <div class="col-6">
+                    <a href="enviar-mensagem.html" class="btn btn-info btn-lg btn-block">Enviar Mensagem</a>
+                </div>
+            </div>
         </div>
-        <a href="consultar-cep.html" id="consultarCepButton" class="btn btn-highlight">Consultar Dados</a>
-        <a href="enviar-mensagem.html" class="btn btn-highlight">Enviar Mensagem</a>
     </header>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Data de Nascimento</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaCorpo"></tbody>
-        </table>
+    <div class="container mt-5">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Data de Nascimento</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaCorpo"></tbody>
+            </table>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
