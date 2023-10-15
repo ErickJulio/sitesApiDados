@@ -1,7 +1,4 @@
-
-function redirecionarParaPaginaPrincipal() {
+const botao = document.querySelector(".btn");
+botao.addEventListener("click", function () {
     window.location.href = "pagina-principal.html";
-}
-
-const botao = document.getElementById("botao");
-botao.addEventListener("click", redirecionarParaPaginaPrincipal);
+});

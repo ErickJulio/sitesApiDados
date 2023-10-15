@@ -7,34 +7,20 @@
     <link rel="stylesheet" href="assets\css\pagina-inicial.css">
 </head>
 <body>
-    <style>
-        body, html {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background: #5CA4EA;
-            overflow: hidden;
-            font-family: 'Lato', sans-serif;
-        }
-    </style>
     <div class="container">
-        <div class="center">
-            <button class="btn">
-                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                </svg>
-                <span>ENTRAR</span>
-            </button>
+        <div class="login-container">
+            <h1>Login</h1>
+            <div class="input-container">
+                <label for="username">Nome de usuário</label>
+                <input type="text" id="username" placeholder="Nome de usuário">
+            </div>
+            <div class="input-container">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Senha">
+            </div>
+            <button class="btn">ENTRAR</button>
         </div>
     </div>
-
-    <script>
-        const botao = document.querySelector(".btn");
-        botao.addEventListener("click", function () {
-            window.location.href = "pagina-principal.html";
-        });
-    </script>
+    <script src="assets\js\pagina-inicial.js"></script>
 </body>
 </html>
