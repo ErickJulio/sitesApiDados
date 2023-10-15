@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: #F8F9FA; /* Cor de fundo da página index */
 }
 
 .container {
@@ -19,12 +20,9 @@ body {
 .navbar {
   width: 100%;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-  background: #007bff;
-  z-index: 1; /* Aumente o z-index para garantir que o menu fique acima de outros elementos */
-
+  background: #343a40; /* Cor de fundo da barra de navegação na página index */
+  z-index: 1;
 }
-
-
 
 .nav-container {
   display: flex;
@@ -35,7 +33,7 @@ body {
 
 .navbar .menu-items {
   display: flex;
-  z-index: 2; /* Aumente o z-index para que o menu fique acima do conteúdo */
+  z-index: 2;
 }
 
 .navbar .nav-container li {
@@ -53,6 +51,7 @@ body {
 
 .navbar .nav-container a:hover {
   font-weight: bold;
+  color: #007bff; /* Cor do texto do link no hover na página index */
 }
 
 .nav-container {
@@ -120,8 +119,8 @@ body {
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
   text-align: center;
-  background: #007bff;
-  z-index: 1; /* Aumente o z-index para que o menu fique acima de outros elementos */
+  background: #343a40; /* Cor de fundo do menu na página index */
+  z-index: 1;
 }
 
 .navbar .menu-items li {
