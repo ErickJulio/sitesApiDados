@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="assets\css\pagina-inicial.css">
+    <link rel="stylesheet" href="assets/css/pagina-inicial.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <div id="message" class="message"></div>
-        <form id="login-form" class="login-form">
-            <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
-            <input type="password" id="senha" name="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>        
+        <div class="login-content">
+            <h1>Login</h1>
+            <div id="message" class="message"></div>
+            <form id="login-form" class="login-form">
+                <div class="input-container">
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <button id="cadastro-button">Cadastre-se</button>
+        </div>
     </div>
-    <script src="assets\js\pagina-inicial.js"></script>
+    <script src="assets/js/pagina-inicial.js"></script>
 </body>
 </html>

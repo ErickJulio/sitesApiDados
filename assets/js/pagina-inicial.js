@@ -31,4 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Erro:", error);
         });
     });
+
+    // Adicione um evento de clique ao botão de cadastro
+    const cadastroButton = document.getElementById("cadastro-button");
+    cadastroButton.addEventListener("click", function () {
+        // Redirecionar para a página de cadastro (cadastro.html)
+        window.location.href = 'cadastro.html';
+    });
 });
