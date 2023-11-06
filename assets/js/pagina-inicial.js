@@ -1,53 +1,63 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("login-form");
-    const messageElement = document.getElementById("message");
 
-    loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
         const usuario = document.getElementById("usuario").value;
         const senha = document.getElementById("senha").value;
-
-        fetch("https://api-teste-dados.onrender.com/login", {
-            method: "POST",
-            headers: {
-                "accept": "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ login: usuario, senha }),
-        })
-        .then((response) => {
-            if (response.status === 200) {
-                return response.json();
-            } else if (response.status === 401) {
-                // Senha incorreta
-                messageElement.innerHTML = "Senha incorreta. Tente novamente.";
-                messageElement.style.color = "red";
-            } else if (response.status === 500) {
-                // Erro no servidor
-                messageElement.innerHTML = "Erro no servidor. Por favor, tente novamente mais tarde.";
-                messageElement.style.color = "red";
-            } else {
-                throw new Error("Erro na solicitação.");
-            }
-        })
-        .then((data) => {
-            if (data.message === "Login bem-sucedido!") {
-                messageElement.innerHTML = "Login bem-sucedido! Redirecionando para a página principal...";
-                messageElement.style.color = "green";
-                // Redirecionar para a página principal após o login bem-sucedido (substitua 'pagina-principal.html' pelo URL correto)
-                window.location.href = 'pagina-principal.html';
-            }
-        })
-        .catch((error) => {
-            console.error("Erro:", error);
-        });
+        
+        try {
+            const response = await performLogin(usuario, senha);
+            await handleResponse(response);
+        } catch (error) {
+            handleError(error);
+        }
     });
 
-    // Adicione um evento de clique ao botão de cadastro
     const cadastroButton = document.getElementById("cadastro-button");
-    cadastroButton.addEventListener("click", function () {
-        // Redirecionar para a página de cadastro (cadastro.html)
-        window.location.href = 'cadastro.html';
+    cadastroButton.addEventListener("click", () => {
+        redirectTo('cadastro.html');
     });
 });
+
+async function performLogin(usuario, senha) {
+    const response = await fetch("https://api-teste-dados.onrender.com/login", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ login: usuario, senha }),
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Erro na solicitação.");
+    }
+    return response;
+}
+
+async function handleResponse(response) {
+    const data = await response.json();
+    if (data.message === "Login bem-sucedido!") {
+        showMessage("Login bem-sucedido! Redirecionando para a página principal...", "success");
+        redirectTo('pagina-principal.html');
+    }
+}
+
+function handleError(error) {
+    console.error("Erro:", error);
+    showMessage(error.message, "error");
+}
+
+function showMessage(message, type) {
+    const messageElement = document.getElementById("message");
+    messageElement.textContent = message;
+    messageElement.classList.remove("d-none", "alert-success", "alert-danger");
+    messageElement.classList.add("alert", type === "error" ? "alert-danger" : "alert-success");
+    messageElement.classList.add(type === "error" ? "alert-danger" : "alert-success");
+}
+
+function redirectTo(url) {
+    window.location.href = url;
+}
