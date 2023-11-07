@@ -68,3 +68,20 @@ button {
 button:hover {
   background-color: var(--primary-hover-color);
 }
+.gradient-background {
+  background: linear-gradient(290deg,#bc9529,#6f71d8,#6946c5,#4d2e58);
+  background-size: 240% 240%;
+  animation: gradient-animation 40s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
