@@ -1,36 +1,52 @@
 document.getElementById('clientForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-  
-    const formData = {
-      login: document.getElementById('login').value,
-      senha: document.getElementById('senha').value,
-      ddd: document.getElementById('ddd').value,
-      celular: document.getElementById('celular').value,
-      rua: document.getElementById('rua').value,
-      numero: document.getElementById('numero').value,
-      cep: document.getElementById('cep').value,
-      cidade: document.getElementById('cidade').value,
-      estado: document.getElementById('estado').value,
-    };
-  
-    fetch('https://api-teste-dados.onrender.com/inserir-dados', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('responseMessage').textContent = 'Cliente cadastrado com sucesso!';
-      // Redirecionar para a página principal (index.html) após um breve atraso (por exemplo, 2 segundos).
-      setTimeout(function() {
-        window.location.href = 'index.html';
-      }, 2000);
-    })
-    .catch(error => {
+  e.preventDefault();
+
+  const formData = {
+    login: document.getElementById('login').value,
+    senha: document.getElementById('senha').value,
+    ddd: document.getElementById('ddd').value,
+    celular: document.getElementById('celular').value,
+    rua: document.getElementById('rua').value,
+    numero: document.getElementById('numero').value,
+    cep: document.getElementById('cep').value,
+    cidade: document.getElementById('cidade').value,
+    estado: document.getElementById('estado').value,
+  };
+
+  // Validar se os campos estão preenchidos
+  const requiredFields = ['login', 'senha', 'ddd', 'celular', 'rua', 'numero', 'cep', 'cidade', 'estado'];
+  for (const field of requiredFields) {
+    if (!formData[field]) {
+      document.getElementById('responseMessage').textContent = 'Preencha todos os campos obrigatórios.';
+      return;
+    }
+  }
+
+  fetch('https://api-teste-dados.onrender.com/inserir-dados', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.mensagem) {
+      document.getElementById('responseMessage').textContent = data.mensagem;
+
+      if (data.mensagem === 'Dados inseridos com sucesso') {
+        // Redirecionar para a página principal (index.html) após um breve atraso (por exemplo, 2 segundos).
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 1000);
+      }
+    } else {
       document.getElementById('responseMessage').textContent = 'Erro ao cadastrar o cliente. Tente novamente.';
-    });
+    }
+  })
+  .catch(error => {
+    document.getElementById('responseMessage').textContent = 'Erro ao cadastrar o cliente. Tente novamente.';
+    console.error('Erro ao cadastrar o cliente:', error);
   });
-  
+});
