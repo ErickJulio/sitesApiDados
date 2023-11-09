@@ -43,3 +43,6 @@ function exibirSenhaGerada(novaSenha) {
     document.getElementById('novaSenha').textContent = novaSenha;
     document.getElementById('senhaGerada').classList.remove('hidden');
 }
+function goBack() {
+    window.history.back();
+}
