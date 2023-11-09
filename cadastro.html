@@ -69,6 +69,7 @@
 
 
       <button type="submit">Cadastrar</button>
+      <button onclick="goBack()">Voltar</button>
     </form>
     <div id="responseMessage"></div>
   </div>
@@ -79,7 +80,7 @@
     });
 
     document.getElementById("celular").addEventListener("input", function() {
-      this.value = this.value replace(/\D/g, "").slice(0, 9);
+      this.value = this.value.replace(/\D/g, "").slice(0, 9);
     });
 
     document.getElementById("numero").addEventListener("input", function() {
@@ -89,6 +90,12 @@
     document.getElementById("cep").addEventListener("input", function() {
       this.value = this.value.replace(/\D/g, "").slice(0, 7);
     });
+
+    function goBack() {
+      window.history.back();
+    }
   </script>
 </body>
 </html>
+
+
