@@ -15,28 +15,11 @@
   100% {
     background-position: 0% 50%;
   }
+
+  /* Adicione outros estilos globais aqui, se necessário */
 }
 
-/* Define estilos globais para a página */
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
-  /* Aplica o gradiente ao fundo da página */
-  background: linear-gradient(2deg, #e02d40, #e6be6d, #60a3a2, #180d31, #9b79d1, #7346c1);
-  background-size: 360% 360%;
-  animation: gradient-animation 18s ease infinite;
-}
-
-/* Estiliza o contêiner principal para o formulário */
+/* Seus estilos adicionais aqui... */
 .container {
   width: 90%;
   max-width: 400px;
@@ -47,14 +30,12 @@ body {
   margin: 20px;
 }
 
-/* Estiliza o cabeçalho do formulário */
 h1 {
   text-align: center;
   color: #333;
   margin-bottom: 1.5rem;
 }
 
-/* Estiliza as labels e inputs do formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -71,10 +52,11 @@ select {
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* Estiliza o botão de cadastro */
-button[type="submit"], button {
+button[type="submit"],
+button {
   padding: 10px;
   background-color: #5c6bc0;
   color: white;
@@ -82,14 +64,17 @@ button[type="submit"], button {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover, button:hover {
+button[type="submit"]:hover,
+button:hover {
   background-color: #3f51b5;
 }
 
-/* Estiliza a mensagem de resposta */
 #responseMessage {
   text-align: center;
   margin-top: 1rem;
+  color: #4CAF50;
+  font-weight: bold;
 }
