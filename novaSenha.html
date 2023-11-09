@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets\css\novaSenha.css">
+  <title>Esqueci Minha Senha</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Esqueci Minha Senha</h2>
+    <form id="senhaForm">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login" required>
+
+      <label for="senha">Nova Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <label for="confirmarSenha">Confirmar Senha:</label>
+      <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+
+      <button type="button" onclick="gerarSenha()">Gerar Nova Senha</button>
+    </form>
+
+    <div id="senhaGerada" class="hidden">
+      <h3>Nova Senha Gerada:</h3>
+      <p id="novaSenha"></p>
+    </div>
+  </div>
+
+  <script src="assets\js\novaSenha.js"></script>
+</body>
+</html>

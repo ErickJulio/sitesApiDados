@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         const usuario = document.getElementById("usuario").value;
         const senha = document.getElementById("senha").value;
-        
+
         try {
             const response = await performLogin(usuario, senha);
             await handleResponse(response);
@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const cadastroButton = document.getElementById("cadastro-button");
     cadastroButton.addEventListener("click", () => {
         redirectTo('cadastro.html');
+    });
+
+    const esqueceuSenhaButton = document.getElementById("esqueceusenha-button");
+    esqueceuSenhaButton.addEventListener("click", () => {
+        redirectTo('novaSenha.html');
     });
 });
 
