@@ -27,8 +27,9 @@ body, html {
 
 body {
   display: flex;
+  flex-direction: column; /* Adicionado para garantir o correto fluxo de coluna em dispositivos móveis */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Alterado para começar do topo em dispositivos móveis */
   background-color: #f4f4f4;
   /* Aplica o gradiente ao fundo da página */
   background: linear-gradient(2deg, #e02d40, #e6be6d, #60a3a2, #180d31, #9b79d1, #7346c1);
