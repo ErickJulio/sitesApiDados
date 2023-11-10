@@ -19,6 +19,8 @@ document.getElementById('cep').addEventListener('focusout', function () {
       document.getElementById('rua').value = data.street;
       document.getElementById('estado').value = data.state;
       document.getElementById('cidade').value = data.city;
+      document.getElementById('bairro').value = data.neighborhood;
+
       // Remova esta linha se o campo de bairro não existir no seu formulário
       // document.getElementById('bairro').value = data.neighborhood;
     } else {

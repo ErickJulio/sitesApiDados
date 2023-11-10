@@ -39,10 +39,10 @@ body {
 
 /* Estiliza o contêiner principal para o formulário */
 .container {
-  width: 90%;
+  width: 50%;
   max-width: 400px;
   background-color: #fff;
-  padding: 15px; /* Reduzi a quantidade de preenchimento (padding) */
+  padding: 20px; /* Reduzi a quantidade de preenchimento (padding) */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: 10px; /* Reduzi a margem */
@@ -112,5 +112,4 @@ button[onclick="goBack()"] {
     margin: 5px; /* Reduzi ainda mais a margem para telas menores */
   }
 
-  /* Adicione mais regras conforme necessário para ajustar outros elementos */
 }
