@@ -37,7 +37,20 @@ async function performLogin(usuario, senha) {
 
     if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || "Erro na solicitação.");
+        let errorMessage = "";
+
+        switch (response.status) {
+            case 400:
+                errorMessage = errorData.message || "Requisição inválida.";
+                break;
+            case 401:
+                errorMessage = errorData.message || "Usuário não encontrado, solicitar cadastro, ou senha incorreta.";
+                break;
+            default:
+                errorMessage = "Erro na solicitação.";
+        }
+
+        throw new Error(errorMessage);
     }
     return response;
 }
@@ -53,14 +66,25 @@ async function handleResponse(response) {
 function handleError(error) {
     console.error("Erro:", error);
     showMessage(error.message, "error");
+    showError("Senha incorreta."); // Exibe a mensagem específica de "Senha incorreta"
 }
 
 function showMessage(message, type) {
     const messageElement = document.getElementById("message");
     messageElement.textContent = message;
-    messageElement.classList.remove("d-none", "alert-success", "alert-danger");
-    messageElement.classList.add("alert", type === "error" ? "alert-danger" : "alert-success");
-    messageElement.classList.add(type === "error" ? "alert-danger" : "alert-success");
+    messageElement.classList.remove("hidden", "bg-green-100", "bg-red-100", "text-green-700", "text-red-700");
+
+    if (type === "error") {
+        messageElement.classList.add("bg-red-100", "text-red-700");
+    } else {
+        messageElement.classList.add("bg-green-100", "text-green-700");
+    }
+}
+
+function showError(message) {
+    const errorMessageElement = document.getElementById("error-message");
+    errorMessageElement.textContent = message;
+    errorMessageElement.classList.remove("hidden");
 }
 
 function redirectTo(url) {
