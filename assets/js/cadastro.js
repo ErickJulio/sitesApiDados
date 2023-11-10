@@ -1,3 +1,36 @@
+document.getElementById('cep').addEventListener('focusout', function () {
+  const formData = {
+    cep: document.getElementById('cep').value,
+  };
+
+  // Chamar a API para obter detalhes do endereço com base no CEP
+  fetch(`https://api-teste-dados.onrender.com/validar-cep`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ cep: formData.cep })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.cep) {
+      // Preencher automaticamente os campos
+      document.getElementById('rua').value = data.street;
+      document.getElementById('estado').value = data.state;
+      document.getElementById('cidade').value = data.city;
+      // Remova esta linha se o campo de bairro não existir no seu formulário
+      // document.getElementById('bairro').value = data.neighborhood;
+    } else {
+      document.getElementById('responseMessage').textContent = 'CEP inválido. Verifique e tente novamente.';
+    }
+  })
+  .catch(error => {
+    document.getElementById('responseMessage').textContent = 'Erro ao obter detalhes do CEP. Tente novamente.';
+    console.error('Erro ao obter detalhes do CEP:', error);
+  });
+});
+
 document.getElementById('clientForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -13,15 +46,7 @@ document.getElementById('clientForm').addEventListener('submit', function (e) {
     estado: document.getElementById('estado').value,
   };
 
-  // Validar se os campos estão preenchidos
-  const requiredFields = ['login', 'senha', 'ddd', 'celular', 'rua', 'numero', 'cep', 'cidade', 'estado'];
-  for (const field of requiredFields) {
-    if (!formData[field]) {
-      document.getElementById('responseMessage').textContent = 'Preencha todos os campos obrigatórios.';
-      return;
-    }
-  }
-
+  // Restante do código para enviar os dados do formulário
   fetch('https://api-teste-dados.onrender.com/inserir-dados', {
     method: 'POST',
     headers: {
