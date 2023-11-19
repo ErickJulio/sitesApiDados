@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets\css\agendamento.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-gray-200">
+
+    <nav class="menu-lateral bg-blue-500 text-white">
+        <ul>
+            <li class="item-menu ativo">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Home</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-columns-gap"></i></span>
+                    <span class="txt-link">Dashboard</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#" onclick="toggleAgendamento()">
+                    <span class="icon"><i class="bi bi-calendar-date"></i></span>
+                    <span class="txt-link">Agendar</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-check2-all"></i></span>
+                    <span class="txt-link">Protocolo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Área de Agendamento -->
+    <div id="areaAgendamento" class="area-agendamento mt-8 p-6 bg-white rounded-md shadow-md w-96">
+        <label for="login" class="block mb-2">Login:</label>
+        <input type="text" id="login" name="login" class="w-full mb-2 p-2 border rounded-md">
+
+        <label for="data" class="block mb-2">Data:</label>
+        <input type="date" id="data" name="data" class="w-full mb-2 p-2 border rounded-md">
+
+        <label for="horario" class="block mb-2">Horário:</label>
+        <input type="time" id="horario" name="horario" class="w-full mb-2 p-2 border rounded-md">
+
+        <label for="procedimento" class="block mb-2">Procedimento:</label>
+        <div class="relative mb-2">
+            <select id="procedimento" name="procedimento" class="w-full p-2 border rounded-md">
+                <option value="Depilação">Depilação</option>
+                <option value="Sobrancelha">Sobrancelha</option>
+                <option value="Buço">Buço</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <input type="text" id="outrosProcedimento" name="outrosProcedimento" placeholder="Digite o procedimento"
+                class="hidden absolute top-0 left-0 w-full p-2 border rounded-md"
+                onfocus="document.getElementById('procedimento').value = 'Outros'">
+        </div>
+
+        <button onclick="agendar()" class="bg-blue-500 text-white py-2 px-4 rounded-md w-full mt-4">Agendar</button>
+
+        <div class="separador my-4 border-t"></div>
+
+        <div class="campo-informativo mb-2">
+            <label for="status">Status:</label>
+        </div>
+
+        <div class="campo-informativo mb-2">
+            <label for="protocolo">Protocolo:</label>
+        </div>
+
+        <div class="separador my-4 border-t"></div>
+
+        <div id="mensagem"></div>
+    </div>
+
+    <script src="assets\js\agendamento.js"></script>
+</body>
+
+</html>

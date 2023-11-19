@@ -1,0 +1,111 @@
+/* agendamento.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Estilo padrão para a barra lateral */
+nav.menu-lateral {
+    width: 50px;
+    height: 100%;
+    background-color: #5c6bc0;
+    padding: 8px 0 8px 1%;
+    box-shadow: 15px 10px 10px #7785e4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.2s;
+}
+
+/* Media query para tornar a barra lateral responsiva */
+@media screen and (max-width: 768px) {
+    nav.menu-lateral {
+        width: 100px; /* Ajuste a largura desejada para telas menores */
+    }
+}
+
+nav.menu-lateral:hover {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu:hover {
+    background: #546ebe;
+    transition: background-color 0.1s;
+}
+
+ul li.item-menu {
+    transition: background-color 0.2s;
+}
+
+ul li.ativo {
+    background-color: #7785e4;
+}
+
+ul li.item-menu a {
+    color: rgba(255, 255, 255, 0.8); /* Ajuste a opacidade conforme necessário */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 30px;
+    transition: color 0.3s; /* Adicionei uma transição suave para a cor do texto */
+}
+
+ul li.item-menu a:hover {
+    color: #fff; /* Cor total ao passar o mouse */
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 20px;
+}
+
+ul li.item-menu a .icon > i {
+    font-size: 25px;
+}
+
+/* Estilos adicionais para a área de agendamento */
+.area-agendamento {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 20px;
+    position: absolute;  
+    top: 0;              
+    left: 300px;         
+}
+
+.campo-informativo {
+    margin-bottom: 20px;
+}
+
+.separador {
+    height: 20px;
+}

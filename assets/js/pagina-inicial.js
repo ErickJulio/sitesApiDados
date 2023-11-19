@@ -59,7 +59,7 @@ async function handleResponse(response) {
     const data = await response.json();
     if (data.message === "Login bem-sucedido!") {
         showMessage("Login bem-sucedido! Redirecionando para a página principal...", "success");
-        redirectTo('pagina-principal.html');
+        redirectTo('agendamento.html');
     }
 }
 
