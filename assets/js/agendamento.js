@@ -116,3 +116,11 @@ document.getElementById('procedimento').addEventListener('change', function () {
         outrosProcedimentoInput.classList.add('hidden');
     }
 });
+
+// Função para redirecionar ao clicar em "Sair"
+function sair() {
+    window.location.href = "index.html";
+}
+
+// Evento de clique no link de "Sair"
+document.querySelector('.item-sair a').addEventListener('click', sair);

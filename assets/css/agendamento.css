@@ -1,5 +1,3 @@
-/* agendamento.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
 * {
@@ -15,7 +13,7 @@ body {
 
 /* Estilo padrão para a barra lateral */
 nav.menu-lateral {
-    width: 50px;
+    width: 55px;
     height: 100%;
     background-color: #5c6bc0;
     padding: 8px 0 8px 1%;
@@ -32,6 +30,19 @@ nav.menu-lateral {
     nav.menu-lateral {
         width: 100px; /* Ajuste a largura desejada para telas menores */
     }
+}
+
+.item-sair {
+    background-color: #5c6bc0;
+    padding: 8px 0 8px 1%;
+    box-shadow: 15px 10px 10px #7785e4;
+    position: fixed;
+    overflow: hidden;
+    transition: width 0.2s;
+    position: absolute;
+    bottom: 10px;
+    left: 1; /* Ajuste conforme necessário */
+    width: 100%;
 }
 
 nav.menu-lateral:hover {
@@ -54,32 +65,23 @@ ul {
     list-style-type: none;
 }
 
-ul li.item-menu:hover {
-    background: #546ebe;
-    transition: background-color 0.1s;
-}
 
-ul li.item-menu {
-    transition: background-color 0.2s;
-}
 
-ul li.ativo {
-    background-color: #7785e4;
-}
+
 
 ul li.item-menu a {
-    color: rgba(255, 255, 255, 0.8); /* Ajuste a opacidade conforme necessário */
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 16px;
     padding: 10px 4%;
     display: flex;
     margin-bottom: 10px;
     line-height: 30px;
-    transition: color 0.3s; /* Adicionei uma transição suave para a cor do texto */
+    transition: color 0.3s;
 }
 
 ul li.item-menu a:hover {
-    color: #fff; /* Cor total ao passar o mouse */
+    color: #fff;
 }
 
 ul li.item-menu a .txt-link {
